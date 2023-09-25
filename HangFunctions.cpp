@@ -9,56 +9,55 @@
 using namespace std;
 
 void displayMisses(int misses){
-    switch (misses) {
-        case 0:
-            cout<<"  +---+ \n";
-            cout<<"  |   | \n";
-            cout<<"      | \n";
-            cout<<"      | \n";
-            cout<<"      | \n";
-            cout<<"      | \n";
-            cout<<" ========= \n";
-        case 1:
-            cout<<"  +---+ \n";
-            cout<<"  |   | \n";
-            cout<<"  O   | \n";
-            cout<<"      | \n";
-            cout<<"      | \n";
-            cout<<"      | \n";
-            cout<<" ========= \n";
-        case 2:
-            cout<<"  +---+ \n";
-            cout<<"  |   | \n";
-            cout<<"  O   | \n";
-            cout<<"  |   | \n";
-            cout<<"      | \n";
-            cout<<"      | \n";
-            cout<<" ========= \n";
-        case 3:
-            cout<<"  +---+ \n";
-            cout<<"  |   | \n";
-            cout<<"  O   | \n";
-            cout<<" /|   | \n";
-            cout<<"      | \n";
-            cout<<"      | \n";
-            cout<<" ========= \n";
-        case 4:
-            cout<<"  +---+ \n";
-            cout<<"  |   | \n";
-            cout<<"  O   | \n";
-            cout<<" /|\\  | \n";
-            cout<<"      | \n";
-            cout<<"      | \n";
-            cout<<" ========= \n";
-        case 5:
-            cout<<"  +---+ \n";
-            cout<<"  |   | \n";
-            cout<<"  O   | \n";
-            cout<<" /|\\  | \n";
-            cout<<" /    | \n";
-            cout<<"      | \n";
-            cout<<" ========= \n";
-        case 6:
+    if (misses == 0) {
+        cout << "  +---+ \n";
+        cout << "  |   | \n";
+        cout << "      | \n";
+        cout << "      | \n";
+        cout << "      | \n";
+        cout << "      | \n";
+        cout << " ========= \n";
+    } else if (misses == 1){
+        cout<<"  +---+ \n";
+        cout<<"  |   | \n";
+        cout<<"  O   | \n";
+        cout<<"      | \n";
+        cout<<"      | \n";
+        cout<<"      | \n";
+        cout<<" ========= \n";
+    } else if (misses == 2) {
+        cout << "  +---+ \n";
+        cout << "  |   | \n";
+        cout << "  O   | \n";
+        cout << "  |   | \n";
+        cout << "      | \n";
+        cout << "      | \n";
+        cout << " ========= \n";
+    } else if (misses == 3) {
+        cout << "  +---+ \n";
+        cout << "  |   | \n";
+        cout << "  O   | \n";
+        cout << " /|   | \n";
+        cout << "      | \n";
+        cout << "      | \n";
+        cout << " ========= \n";
+    } else if (misses == 4) {
+        cout << "  +---+ \n";
+        cout << "  |   | \n";
+        cout << "  O   | \n";
+        cout << " /|\\  | \n";
+        cout << "      | \n";
+        cout << "      | \n";
+        cout << " ========= \n";
+    } else if (misses == 5) {
+        cout << "  +---+ \n";
+        cout << "  |   | \n";
+        cout << "  O   | \n";
+        cout << " /|\\  | \n";
+        cout << " /    | \n";
+        cout << "      | \n";
+        cout << " ========= \n";
+    } else if (misses == 6){
             cout<<"  +---+ \n";
             cout<<"  |   | \n";
             cout<<"  O   | \n";
@@ -70,15 +69,23 @@ void displayMisses(int misses){
 }
 
 void displayStatus(vector<char> incorrect, string answer){
-    cout << "Incorrect guesses: \n";
+    cout << "Incorrect guesses: ";
 
-    for (int i = 0; i < incorrect.size(); i++){
-        cout << incorrect[i] << " ";
+    for (char i : incorrect)
+        cout << i << " ";
+
+    cout << "\n\nCodeword\n";
+
+    for (char i : answer)
+        cout << i << " ";
+}
+
+void endGame(string answer, string codeword){
+    if (answer == codeword) {
+        cout << "Awesome! You save the little person :D\n";
+    } else {
+        cout << "Very sad, the person is dead :(\n";
     }
 
-    cout << "\nCodeword\n";
 
-    for (int i = 0; i < answer.length(); i++){
-        cout << answer[i] << " ";
-    }
 }

@@ -12,5 +12,6 @@ using namespace std;
 
 void displayMisses(int misses);
 void displayStatus(vector<char> incorrect, string answer);
+void endGame(string answer, string codeword);
 
 #endif //HANGMAN_HANGFUNCTIONS_H
